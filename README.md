@@ -12,4 +12,23 @@ decisiones que dependerán directamente del alumno para darle un aporte más per
 poder mejorar la nota final del mismo. Los resultados de cada proyecto serán diferentes aunque las
 herramientas utilizadas sean las mismas.
 
-### ESCENARIO
+## ESCENARIO
+Acabas de terminar un extenso curso en Desarrollo Blockchain en el centro de estudios Tokio School
+y, te has apuntado a la bolsa de empleo que ofrece la escuela. Entre las diferentes ofertas te fijas en
+una de la compañía Blockchain TS, la cual tiene que cubrir dos puestos donde el candidato tenga
+conocimientos en Blockchain, así como en el estándar ERC20.
+
+Las dos vacantes disponibles indican lo siguiente:
+
+### VACANTE 1:
+El candidato deberá ser capaz de generar a través de un desarrollo pares de claves automáticamente
+y que actualicen los scripts de despliegue de una red privada OpenEthereum Dockerizada con cuatro
+nodos:
+  - Un nodo validador
+  - Dos nodos no validadores
+  - Un nodo RPC
+
+### VACANTE 2:
+El candidato deberá ser capaz de realizar un despliegue de un Smart Contract que registre todos los
+alumnos que se van matriculando en el centro de estudios Tokio School en cuatro cursos diferentes:
+
