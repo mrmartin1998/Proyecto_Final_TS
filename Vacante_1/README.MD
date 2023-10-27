@@ -64,6 +64,7 @@ for (const [nodeName, nodeInfo] of Object.entries(nodes)) {
 2.1 nodes
 
 2.1.1 non-validator-node-1
+
 Function: These nodes participate in the network by propagating transactions and blocks but do not have the authority to validate or create new blocks.
 Purpose: Increases the network's resilience and decentralization. They help in distributing the blockchain data and ensuring its availability.
 ```
@@ -92,6 +93,7 @@ unlock = ["0x7320f1fc01feaf81a2e215121d6c21ea39c7a8e0"]
 password = ["/home/martin/openethereum/non-validator-node-1/node.pwds"]
 ```
 2.1.2 non-validator-node-2
+
 Function: These nodes participate in the network by propagating transactions and blocks but do not have the authority to validate or create new blocks.
 Purpose: Increases the network's resilience and decentralization. They help in distributing the blockchain data and ensuring its availability.
 ```
@@ -120,6 +122,7 @@ unlock = ["0xad704472b20edd35619d5406755ba6c4f13ecc29"]
 password = ["/home/martin/openethereum/non-validator-node-2/node.pwds"]
 ```
 2.1.3 rpc-node
+
 Function: This node provides a Remote Procedure Call (RPC) interface for external applications and users to interact with the blockchain. It allows for querying the blockchain, sending transactions, and more.
 Purpose: Facilitates external interactions with the blockchain without directly accessing the core network, ensuring a level of abstraction and security.
 ```
@@ -152,6 +155,7 @@ unlock = ["0x94831bcc97c8e69a3c6720d39293ce8eaa0ec42b"]
 password = ["/home/martin/openethereum/rpc-node/node.pwds"]
 ```
 2.1.4 validator-node
+
 Function: This node is responsible for validating and confirming transactions and blocks in the network. In a Proof-of-Authority (PoA) or Proof-of-Stake (PoS) network, only validator nodes have the authority to create new blocks.
 Purpose: Ensures that only valid transactions are added to the blockchain, maintaining the integrity and security of the network.
 ```
@@ -180,6 +184,9 @@ unlock = ["0x73b22c3c4edb1133c53ebdfb21ed9ef7481df306"]
 password = ["/home/martin/openethereum/validator-node/node.pwds"]
 ```
 2.1.5 genesis.json
+
+Function: The genesis.json file defines the initial configuration of the blockchain when it's first started. It sets parameters like the initial difficulty, gas limit, and also pre-funds certain accounts.
+Purpose: Acts as the "blueprint" for the blockchain's initial state. Every node in the network must have the same genesis configuration to ensure they're all in sync from the start.
 ```
 {
   "name": "LocalTestnet",
@@ -229,6 +236,9 @@ password = ["/home/martin/openethereum/validator-node/node.pwds"]
 }
 ```
 2.1.6 docker-compose.yml
+
+Function: The docker-compose.yml file is used to define and run multi-container Docker applications. For this project, it specifies how the OpenEthereum nodes should be set up and run in Docker containers.
+Purpose: Simplifies the process of deploying multiple interconnected containers. It ensures that all nodes are set up with the correct configurations, network settings, and dependencies, making the deployment process repeatable and consistent.
 ```
 version: '3'
 services:
