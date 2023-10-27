@@ -92,4 +92,4 @@ truffle compile
 truffle migrate --network development
 ```
 
-Interact with the Smartcontract
+4. Interact with the Smartcontract
