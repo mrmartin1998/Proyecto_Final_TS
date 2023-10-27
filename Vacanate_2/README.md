@@ -10,6 +10,6 @@ Together, Truffle and Ganache provide a comprehensive environment for Ethereum s
 
 1.1 Installation: If you haven't already, install Truffle globally using npm:
 
-'''
+´´´
 npm install -g truffle
-'''
+´´´
