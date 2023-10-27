@@ -309,6 +309,90 @@ networks:
     driver: bridge
 ```
 
+3. Smartcontract & deployment
 
+3.1 Smartcontract
+
+3.1.1 Contract overview: The SimpleStorage contract is a very basic Ethereum smart contract that allows users to store and retrieve a single uint256 value.
+
+
+3.1.2 Functions
+
+- set(uint256 x): This function allows users to store a uint256 value (x) in the storedData state variable of the contract.
+
+- get(): This function allows users to retrieve the current value of the storedData state variable.
+
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract SimpleStorage {
+    uint256 public storedData;
+
+    function set(uint256 x) public {
+        storedData = x;
+    }
+
+    function get() public view returns (uint256) {
+        return storedData;
+    }
+}
+```
+
+3.2 Deployment
+
+3.2.1 deployContract.js overview:
+The deployment script is written in JavaScript and uses the Web3.js library to interact with an Ethereum node. Its main purpose is to deploy the SimpleStorage contract to the Ethereum network.
+
+3.2.2 Key components
+
+  - Web3 Connection: The script establishes a connection to a local Ethereum node using the HTTP provider on port 8550.
+```
+const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8550"));
+```
+
+  - Account Setup: The script uses the private key of the validator-node to create an account object. This account will be used to deploy the contract and pay for the gas fees.
+```
+const privateKey = '0xad0fcdc0e7f91ac0df5498e9237393970b446db9e6dbf2673064ddfbf0026b1f';
+const account = web3.eth.accounts.privateKeyToAccount(privateKey);
+```
+
+  - ABI and Bytecode Loading: The script reads the ABI (Application Binary Interface) and bytecode of the SimpleStorage contract from output files. These are essential for deploying and interacting with the contract.
+```
+const abi = JSON.parse(fs.readFileSync('output/SimpleStorage.abi', 'utf8'));
+const bytecode = '0x' + fs.readFileSync('output/SimpleStorage.bin', 'utf8');
+```
+
+  - Contract Deployment: The script initializes a new contract object using the ABI, then deploys the contract using the bytecode. It specifies the gas limit and gas price for the deployment transaction.
+```
+const simpleStorageContract = new web3.eth.Contract(abi);
+simpleStorageContract.deploy({ data: bytecode })
+```
+
+  - Receipt Logging: Once the contract is successfully deployed, the script logs the contract's address to the console.
+```
+.on('receipt', receipt => {
+    console.log('Contract deployed at address:', receipt.contractAddress);
+});
+```
+
+
+4. Launching network
+
+4.1 Launch network
+To initiate the network, Docker Compose is utilized, which will activate all the services (nodes) specified in the docker-compose.yml file.
+
+The following command initiates all services in detached mode. The nodes (validator-node, rpc-node, non-validator-node-1, and non-validator-node-2) will start and synchronize with each other.
+```
+docker-compose up -d
+```
+
+4.2 Deploy contract
+With the network operational, the next step is to deploy the SimpleStorage smart contract using the provided deployment script:
+```
+node deployContract.js
+```
+
+5. Problems and errors I am running into
 
 
