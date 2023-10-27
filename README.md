@@ -11,3 +11,5 @@ Es importante tener en cuenta que el proyecto no está definido al 100%, por lo 
 decisiones que dependerán directamente del alumno para darle un aporte más personalizado y así
 poder mejorar la nota final del mismo. Los resultados de cada proyecto serán diferentes aunque las
 herramientas utilizadas sean las mismas.
+
+### ESCENARIO
