@@ -1,7 +1,9 @@
 1. Generate the four accounts:
 
   1.1. Pre-requisites:
+
       - A Linux-based operating system.
+
       - Administrative privileges to install necessary packages.
 
   1.2 Installation
