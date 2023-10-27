@@ -64,6 +64,8 @@ for (const [nodeName, nodeInfo] of Object.entries(nodes)) {
 2.1 nodes
 
 2.1.1 non-validator-node-1
+Function: These nodes participate in the network by propagating transactions and blocks but do not have the authority to validate or create new blocks.
+Purpose: Increases the network's resilience and decentralization. They help in distributing the blockchain data and ensuring its availability.
 ```
 [parity]
 chain = "genesis.json"
@@ -90,6 +92,8 @@ unlock = ["0x7320f1fc01feaf81a2e215121d6c21ea39c7a8e0"]
 password = ["/home/martin/openethereum/non-validator-node-1/node.pwds"]
 ```
 2.1.2 non-validator-node-2
+Function: These nodes participate in the network by propagating transactions and blocks but do not have the authority to validate or create new blocks.
+Purpose: Increases the network's resilience and decentralization. They help in distributing the blockchain data and ensuring its availability.
 ```
 [parity]
 chain = "genesis.json"
@@ -116,6 +120,8 @@ unlock = ["0xad704472b20edd35619d5406755ba6c4f13ecc29"]
 password = ["/home/martin/openethereum/non-validator-node-2/node.pwds"]
 ```
 2.1.3 rpc-node
+Function: This node provides a Remote Procedure Call (RPC) interface for external applications and users to interact with the blockchain. It allows for querying the blockchain, sending transactions, and more.
+Purpose: Facilitates external interactions with the blockchain without directly accessing the core network, ensuring a level of abstraction and security.
 ```
 [parity]
 chain = "genesis.json"
@@ -146,6 +152,8 @@ unlock = ["0x94831bcc97c8e69a3c6720d39293ce8eaa0ec42b"]
 password = ["/home/martin/openethereum/rpc-node/node.pwds"]
 ```
 2.1.4 validator-node
+Function: This node is responsible for validating and confirming transactions and blocks in the network. In a Proof-of-Authority (PoA) or Proof-of-Stake (PoS) network, only validator nodes have the authority to create new blocks.
+Purpose: Ensures that only valid transactions are added to the blockchain, maintaining the integrity and security of the network.
 ```
 [parity]
 chain = "genesis.json"
