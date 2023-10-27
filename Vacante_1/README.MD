@@ -65,18 +65,229 @@ for (const [nodeName, nodeInfo] of Object.entries(nodes)) {
 
 2.1.1 non-validator-node-1
 ```
-
+[parity]
+chain = "genesis.json"
+base_path = "nv-node1"
+[network]
+port = 30304
+bootnodes = [
+  "enode://74a8f53da4c54463afcd3a86c16efa4388f96b33592bd37c58fd3808e8ef622927f014ffa49fba0961a67c9f2878b120709505d4086e2bee9cbc82e77fd3711f@172.22.0.3:30303",
+  "enode://8f493485be09a21dce6861cbc29d6f116b7a2555a95058a3ed3e3cc22846b4f9ad5be69d04df8c70f393a1653cf4309fdbc7499e7159c4c772f02e956b7786ac@172.22.0.2:30303",
+  "enode://4a73821efafb20998042ac9f8c25af92d00afa08e2014d5182270198fb8762f1f9d4995524dfecbfd6cf7ed6fb94af5aaf5f6726cf08b9b2b6a65fca3c989ecf@172.22.0.5:30303",
+  "enode://95fa76c0913d1cfeda01126409b199c5a79953745d10a571e1e3598821cf72206362c0dc3731fac0b46660178bc8eb98061b12df01cd9cdc07fcd732fb1c7209@172.22.0.4:30303"
+]
+[rpc]
+interface = "local"
+cors = ["none"]
+hosts = ["none"]
+apis = ["web3", "eth", "net", "parity", "traces", "rpc"]
+port = 8548
+[websockets]
+interface = "local"
+port = 8453
+[account]
+unlock = ["0x7320f1fc01feaf81a2e215121d6c21ea39c7a8e0"]
+password = ["/home/martin/openethereum/non-validator-node-1/node.pwds"]
 ```
 2.1.2 non-validator-node-2
-
+```
+[parity]
+chain = "genesis.json"
+base_path = "nv-node2"
+[network]
+port = 30304
+bootnodes = [
+  "enode://43d34c5e81ee32c6380682960743df9b6f6a63d58e544d1ff2976c89b07d082855a4505ec27314e2305377b1045c97fe8f9bf406cb67e1cfc77de744de74debd@172.26.0.2:30303",
+  "enode://5484c3e743e031ec20b8176ec23529ee36c3cf20add55667fed32b5dc25e5ba5a7f0f0c3d8e37776f7338d468b38d5c5e629b45923a8569acf799fe97099dbc5@172.26.0.4:30303",
+  "enode://185b0c2bca6ddde2fa1aec2a3504f3b59f6124cf81e9f62378887f00f8daa4ce239eae29b82718826bd9fa6b1e9fcb2c9c8e55c76d56a7b7aab82ac6ec328f8d@172.26.0.5:30303",
+  "enode://cccb2ae8f19f5482d761d0b6375053002a332c0e192f8fa4f690b6da694d843f62328b2a4b7f244557846a5be08a6851ee69a304869d857d8f24e6b3fcff4d48@172.26.0.3:30303"
+]
+[rpc]
+interface = "local"
+cors = ["none"]
+hosts = ["none"]
+apis = ["web3", "eth", "net", "parity", "traces", "rpc"]
+port = 8548
+[websockets]
+interface = "local"
+port = 8453
+[account]
+unlock = ["0xad704472b20edd35619d5406755ba6c4f13ecc29"]
+password = ["/home/martin/openethereum/non-validator-node-2/node.pwds"]
+```
 2.1.3 rpc-node
+```
+[parity]
+chain = "genesis.json"
+base_path = "rpc-node"
 
+[network]
+port = 30306
+bootnodes = [
+  "enode://74a8f53da4c54463afcd3a86c16efa4388f96b33592bd37c58fd3808e8ef622927f014ffa49fba0961a67c9f2878b120709505d4086e2bee9cbc82e77fd3711f@172.22.0.3:30303",
+  "enode://8f493485be09a21dce6861cbc29d6f116b7a2555a95058a3ed3e3cc22846b4f9ad5be69d04df8c70f393a1653cf4309fdbc7499e7159c4c772f02e956b7786ac@172.22.0.2:30303",
+  "enode://4a73821efafb20998042ac9f8c25af92d00afa08e2014d5182270198fb8762f1f9d4995524dfecbfd6cf7ed6fb94af5aaf5f6726cf08b9b2b6a65fca3c989ecf@172.22.0.5:30303",
+  "enode://95fa76c0913d1cfeda01126409b199c5a79953745d10a571e1e3598821cf72206362c0dc3731fac0b46660178bc8eb98061b12df01cd9cdc07fcd732fb1c7209@172.22.0.4:30303"
+]
+
+[rpc]
+interface = "0.0.0.0"
+cors = ["*"]
+hosts = ["none"]
+apis = ["web3", "eth", "net", "parity", "traces", "rpc"]
+port = 8545
+
+[websockets]
+interface = "0.0.0.0"
+port = 8452
+
+[account]
+unlock = ["0x94831bcc97c8e69a3c6720d39293ce8eaa0ec42b"]
+password = ["/home/martin/openethereum/rpc-node/node.pwds"]
+```
 2.1.4 validator-node
-
+```
+[parity]
+chain = "genesis.json"
+base_path = "validator-node"
+[network]
+port = 30305
+bootnodes = [
+  "enode://74a8f53da4c54463afcd3a86c16efa4388f96b33592bd37c58fd3808e8ef622927f014ffa49fba0961a67c9f2878b120709505d4086e2bee9cbc82e77fd3711f@172.22.0.3:30303",
+  "enode://8f493485be09a21dce6861cbc29d6f116b7a2555a95058a3ed3e3cc22846b4f9ad5be69d04df8c70f393a1653cf4309fdbc7499e7159c4c772f02e956b7786ac@172.22.0.2:30303",
+  "enode://4a73821efafb20998042ac9f8c25af92d00afa08e2014d5182270198fb8762f1f9d4995524dfecbfd6cf7ed6fb94af5aaf5f6726cf08b9b2b6a65fca3c989ecf@172.22.0.5:30303",
+  "enode://95fa76c0913d1cfeda01126409b199c5a79953745d10a571e1e3598821cf72206362c0dc3731fac0b46660178bc8eb98061b12df01cd9cdc07fcd732fb1c7209@172.22.0.4:30303"
+]
+[rpc]
+interface = "local"
+cors = ["none"]
+hosts = ["none"]
+apis = ["web3", "eth", "net", "parity", "traces", "rpc"]
+port = 8546
+[websockets]
+interface = "local"
+port = 8450
+[account]
+unlock = ["0x73b22c3c4edb1133c53ebdfb21ed9ef7481df306"]
+password = ["/home/martin/openethereum/validator-node/node.pwds"]
+```
 2.1.5 genesis.json
-
+```
+{
+  "name": "LocalTestnet",
+  "engine": {
+    "Ethash": {
+      "params": {
+        "minimumDifficulty": "0x0200",
+        "difficultyBoundDivisor": "0x0800",
+        "durationLimit": "0x0d",
+        "blockReward": "0x4563918244F40000",
+        "homesteadTransition": 0
+      }
+    }
+  },
+  "params": {
+    "accountStartNonce": "0x00",
+    "maximumExtraDataSize": "0x20",
+    "minGasLimit": "0x47E7C4",
+    "gasLimitBoundDivisor": "0x0400",
+    "networkID": "0x540",
+    "chainID": "0x540"
+  },
+  "genesis": {
+    "seal": {
+      "ethereum": {
+        "nonce": "0x0000000000000042",
+        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "difficulty": "0x400000000",
+    "author": "0x0000000000000000000000000000000000000000",
+    "timestamp": "0x00",
+    "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "extraData": "0x",
+    "gasLimit": "0x7A1200"
+  },
+  "accounts": {
+    "0xd0decd7ad1d023296941eb4ff39cc9f21ffaba6b": {"balance": "10000000000000000000000"},
+    "0xdb76a8293bd0bd6187f2a3532f5727e72ef36ced": {"balance": "10000000000000000000000"},
+    "0xd29a3f6f1259c9b0d495c1377dc2ab3caa011631": {"balance": "10000000000000000000000"},
+    "0x472689090331909e92b6de1b8a3111a7f83fa1f9": {"balance": "10000000000000000000000"},
+    "0x7320f1fc01feaf81a2e215121d6c21ea39c7a8e0": {"balance": "10000000000000000000000"},
+    "0xad704472b20edd35619d5406755ba6c4f13ecc29": {"balance": "10000000000000000000000"},
+    "0x94831bcc97c8e69a3c6720d39293ce8eaa0ec42b": {"balance": "10000000000000000000000"},
+    "0x73b22c3c4edb1133c53ebdfb21ed9ef7481df306": {"balance": "10000000000000000000000"}
+  }
+}
+```
 2.1.6 docker-compose.yml
+```
+version: '3'
+services:
+  non-validator-node-1:
+    image: openethereum/openethereum:latest
+    user: root
+    volumes:
+      - ./non-validator-node-1/config.toml:/config/node.toml
+      - ./non-validator-node-1:/home/openethereum/.local/share/io.parity.ethereum
+      - ./genesis.json:/config/genesis.json
+    networks:
+      - openethereum-network
+    ports:
+      - "30308:30303"
+      - "8552:8547" # Changed from "8548:8547" to "8552:8547" to avoid port conflict
+      - "8455:8451" # WebSocket port
 
+  non-validator-node-2:
+    image: openethereum/openethereum:latest
+    user: root
+    volumes:
+      - ./non-validator-node-2/config.toml:/config/node.toml
+      - ./non-validator-node-2:/home/openethereum/.local/share/io.parity.ethereum
+      - ./genesis.json:/config/genesis.json
+    networks:
+      - openethereum-network
+    ports:
+      - "30307:30303"
+      - "8549:8548" # RPC port
+      - "8453:8453" # WebSocket port
+
+  rpc-node:
+    image: openethereum/openethereum:latest
+    user: root
+    command:
+      - '--jsonrpc-interface=all'
+      - '--jsonrpc-port=8545'
+      - '--jsonrpc-cors=all'
+      - '--jsonrpc-apis=web3,eth,net,personal,parity,parity_set,traces,rpc,parity_accounts'
+    volumes:
+      - ./rpc-node/config.toml:/config/node.toml
+      - ./rpc-node:/home/openethereum/.local/share/io.parity.ethereum
+      - ./genesis.json:/config/genesis.json
+    networks:
+      - openethereum-network
+    ports:
+      - "8550:8545" # RPC port
+      - "8454:8452" # WebSocket port
+
+  validator-node:
+    image: openethereum/openethereum:latest
+    user: root
+    volumes:
+      - ./validator-node/config.toml:/config/node.toml
+      - ./validator-node:/home/openethereum/.local/share/io.parity.ethereum
+      - ./genesis.json:/config/genesis.json
+    networks:
+      - openethereum-network
+    ports:
+      - "30309:30303"
+      - "8546:8546"
+      - "8450:8450"
+
+networks:
+  openethereum-network:
+    driver: bridge
+```
 
 
 
