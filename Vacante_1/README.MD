@@ -58,3 +58,26 @@ for (const [nodeName, nodeInfo] of Object.entries(nodes)) {
   }
 }
 ```
+
+2. Files and configurations
+
+2.1 nodes
+
+2.1.1 non-validator-node-1
+```
+
+```
+2.1.2 non-validator-node-2
+
+2.1.3 rpc-node
+
+2.1.4 validator-node
+
+2.1.5 genesis.json
+
+2.1.6 docker-compose.yml
+
+
+
+
+
