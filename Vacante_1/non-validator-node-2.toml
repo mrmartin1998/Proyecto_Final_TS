@@ -1,0 +1,25 @@
+[parity]
+chain = "/home/martin/tokio-school/vacante-1/genesis.json"
+base_path = "/home/martin/tokio-school/vacante-1/nodes/non-validator-node-2/"
+[network]
+port = 30301
+discovery = true
+
+bootnodes = [
+    "enode://1ec285462b89b321584670bbadb45707b14bc9952a5efeb4819a8500eb1475ee5d06dd29aa9984acccabeb45765ea185382b35964390ac15a10b9e9c0eb31b2e@172.21.0.5:30300",
+    "enode://9b218f23f867b7cce66d4cab432ef00988174867e933c1741a7da11e0f6d959535c1f342c921455748ad33b62c569c4020dc238e40cd84c7f74153868cb9aebd@172.21.0.3:30302",
+    "enode://127089fdc374444960df3fd64da94520bb17bcddb3370d495843580c001c68b066ea2f1e674e85a3e5e0c078485daba28fbe8c38bf145debe6b521e6836e18bc@172.21.0.4:30303"
+]
+
+[rpc]
+port = 8541
+interface = "0.0.0.0"
+apis = ["web3", "eth", "net", "personal", "parity", "parity_set", "traces", "rpc", "parity_accounts"]
+[websockets]
+port = 8451
+[account]
+password = ["/home/martin/tokio-school/vacante-1/nodes/non-validator-node-2/node.pwds"]
+unlock = ["0x492732b283dfc34a2daa06f32e3aa4fb00562ec3"]
+[mining]
+engine_signer = "0x492732b283dfc34a2daa06f32e3aa4fb00562ec3"
+reseal_on_txs = "none"

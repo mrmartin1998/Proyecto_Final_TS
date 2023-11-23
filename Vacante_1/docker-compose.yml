@@ -1,0 +1,70 @@
+version: '3'
+
+services:
+  non-validator-node-1:
+    image: openethereum/openethereum:latest
+    volumes:
+      - ./non-validator-node-1.toml:/home/martin/tokio-school/vacante-1/non-validator-node-1.toml
+      - ./genesis.json:/home/martin/tokio-school/vacante-1/genesis.json
+      - ./nodes/non-validator-node-1:/home/martin/tokio-school/vacante-1/nodes/non-validator-node-1
+    command: ["--config", "/home/martin/tokio-school/vacante-1/non-validator-node-1.toml"]
+    ports:
+      - "30300:30300"
+      - "8540:8540"
+      - "8450:8450"
+    networks:
+      private-network:
+        ipv4_address: 172.21.0.5
+
+  non-validator-node-2:
+    image: openethereum/openethereum:latest
+    volumes:
+      - ./non-validator-node-2.toml:/home/martin/tokio-school/vacante-1/non-validator-node-2.toml
+      - ./genesis.json:/home/martin/tokio-school/vacante-1/genesis.json
+      - ./nodes/non-validator-node-2:/home/martin/tokio-school/vacante-1/nodes/non-validator-node-2
+    command: ["--config", "/home/martin/tokio-school/vacante-1/non-validator-node-2.toml"]
+    ports:
+      - "30301:30301"
+      - "8541:8541"
+      - "8451:8451"
+    networks:
+      private-network:
+        ipv4_address: 172.21.0.2
+
+  rpc-node:
+    image: openethereum/openethereum:latest
+    volumes:
+      - ./rpc-node.toml:/home/martin/tokio-school/vacante-1/rpc-node.toml
+      - ./genesis.json:/home/martin/tokio-school/vacante-1/genesis.json
+      - ./nodes/rpc-node:/home/martin/tokio-school/vacante-1/nodes/rpc-node
+    command: ["--config", "/home/martin/tokio-school/vacante-1/rpc-node.toml"]
+    ports:
+      - "30302:30302"
+      - "8542:8542"
+      - "8452:8452"
+    networks:
+      private-network:
+        ipv4_address: 172.21.0.3
+
+  validator-node:
+    image: openethereum/openethereum:latest
+    volumes:
+      - ./validator-node.toml:/home/martin/tokio-school/vacante-1/validator-node.toml
+      - ./genesis.json:/home/martin/tokio-school/vacante-1/genesis.json
+      - ./nodes/validator-node:/home/martin/tokio-school/vacante-1/nodes/validator-node
+    command: ["--config", "/home/martin/tokio-school/vacante-1/validator-node.toml"]
+    ports:
+      - "30303:30303"
+      - "8543:8543"
+      - "8453:8453"
+    networks:
+      private-network:
+        ipv4_address: 172.21.0.4
+
+
+networks:
+  private-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.21.0.0/16
